@@ -8,12 +8,24 @@ class BankingApp {
         return this.balance;
     }
 
-    deposit(amount) {
+    deposit(amount, date) {
         this.balance += amount;
+        this.transactions.push({
+            amount: amount,
+            date: date,
+            type: "deposit",
+            balance: this.balance
+        })
     }
 
-    withdraw(amount) {
+    withdraw(amount, date) {
         this.balance -= amount;
+        this.transactions.push({
+            amount: amount,
+            date: date,
+            type: "withdraw",
+            balance: this.balance
+        })
     }
 }
 
