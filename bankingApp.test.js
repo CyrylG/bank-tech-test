@@ -17,10 +17,17 @@ describe("BankingApp class", () => {
         expect(account.balance).toEqual(100);
     })
 
-    it("deposits twice", () => {
+    it("shows balance after 2 deposits", () => {
         const account = new BankingApp();
         account.deposit(100);
         account.deposit(300);
         expect(account.balance).toEqual(400);
+    })
+
+    it("shows balance after a deposit and withdrawal", () => {
+        const account = new BankingApp();
+        account.deposit(100);
+        account.withdraw(50);
+        expect(account.balance).toEqual(50);
     })
 })
