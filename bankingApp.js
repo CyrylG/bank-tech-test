@@ -1,6 +1,15 @@
 class BankingApp {
     constructor() {
         this.transactions = [];
+        this.balance = 0;
+    }
+
+    balance() {
+        return this.balance;
+    }
+
+    deposit(amount) {
+        this.balance += amount;
     }
 }
 
