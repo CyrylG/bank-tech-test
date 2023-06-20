@@ -27,6 +27,17 @@ class BankingApp {
             balance: this.balance
         })
     }
+
+    printStatement () {
+        console.log("date || credit || debit || total")
+        this.transactions.reverse().map((transaction) => {
+            if (transaction.type === "deposit") {
+                console.log(`${transaction.date} || ${transaction.amount} || || ${transaction.balance}`)
+            } else {
+                console.log(`${transaction.date} || || ${transaction.amount} || ${transaction.balance}`)
+            }
+        })
+    }
 }
 
 module.exports = BankingApp;
