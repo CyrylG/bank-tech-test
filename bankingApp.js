@@ -4,7 +4,7 @@ class BankingApp {
         this.balance = 0.00;
     }
 
-    balance() {
+    checkBalance() {
         return this.balance;
     }
 
@@ -20,6 +20,10 @@ class BankingApp {
 
     withdraw(amount, date) {
         this.balance -= amount;
+        console.log(this.balance)
+        if (this.balance < 0) {
+            throw new Error("Cannot withdraw more money than you have");
+        }
         this.transactions.push({
             amount: amount.toFixed(2),
             date: date,
