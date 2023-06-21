@@ -36,4 +36,17 @@ describe("BankingApp class", () => {
         account.deposit(100);
         expect(() => account.withdraw(200)).toThrow("Cannot withdraw more money than you have");
     })
+
+    it("date is added on deposit", () => {
+        const account = new BankingApp();
+        account.deposit(100, "2019-01-01");
+        expect(account.transactions[0].date).toEqual("2019-01-01");
+    })
+
+    it("date is added on withdrawal", () => {
+        const account = new BankingApp();
+        account.deposit(100, "2018-01-01");
+        account.withdraw(100, "2019-01-01");
+        expect(account.transactions[1].date).toEqual("2019-01-01");
+    })
 })
