@@ -1,7 +1,7 @@
 class BankingApp {
     constructor() {
         this.transactions = [];
-        this.balance = 0;
+        this.balance = 0.00;
     }
 
     balance() {
@@ -11,20 +11,20 @@ class BankingApp {
     deposit(amount, date) {
         this.balance += amount;
         this.transactions.push({
-            amount: amount,
+            amount: amount.toFixed(2),
             date: date,
             type: "deposit",
-            balance: this.balance
+            balance: this.balance.toFixed(2)
         })
     }
 
     withdraw(amount, date) {
         this.balance -= amount;
         this.transactions.push({
-            amount: amount,
+            amount: amount.toFixed(2),
             date: date,
             type: "withdraw",
-            balance: this.balance
+            balance: this.balance.toFixed(2)
         })
     }
 
