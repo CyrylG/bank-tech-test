@@ -20,7 +20,6 @@ class BankingApp {
 
     withdraw(amount, date) {
         this.balance -= amount;
-        console.log(this.balance)
         if (this.balance < 0) {
             throw new Error("Cannot withdraw more money than you have");
         }
